@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-
 <html dir="rtl" lang="ar">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>One Mix - اشتراك Netflix وShahid</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&amp;family=Cairo:wght@200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>توثيق التجارة الإلكترونية - One Mix</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <style>
         :root {
             --primary-bg: #1a1a2e;
             --secondary-bg: #16213e;
@@ -31,8 +30,6 @@
             --shadow-heavy: 0 15px 35px rgba(0, 0, 0, 0.3);
             --border-radius: 10px;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            
-            /* Original footer colors */
             --darker-bg: #1a252f;
             --light-text: #e8e8e8;
         }
@@ -47,12 +44,11 @@
             font-family: 'Cairo', sans-serif;
             background: var(--primary-bg);
             color: var(--text-light);
-            line-height: 1.5;
+            line-height: 1.6;
             overflow-x: hidden;
-            font-size: 14px;
+            font-size: 16px;
         }
 
-        /* Subtle background animation */
         body::before {
             content: '';
             position: fixed;
@@ -63,16 +59,9 @@
             background: 
                 radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(240, 147, 251, 0.05) 0%, transparent 50%);
-            animation: subtleFloat 20s ease-in-out infinite alternate;
             z-index: -2;
         }
 
-        @keyframes subtleFloat {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.6; }
-        }
-
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
@@ -91,12 +80,6 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .header.scrolled {
-            background: rgba(26, 26, 46, 0.98);
-            padding: 0.4rem 1.5rem;
-            box-shadow: var(--shadow-medium);
-        }
-
         .header-content {
             display: flex;
             justify-content: space-between;
@@ -109,10 +92,6 @@
             height: 45px;
             transition: var(--transition);
             filter: drop-shadow(0 0 8px rgba(102, 126, 234, 0.3));
-        }
-
-        .header.scrolled .logo {
-            height: 35px;
         }
 
         .nav-menu {
@@ -130,22 +109,6 @@
             padding: 0.4rem 0.8rem;
             border-radius: 6px;
             font-size: 0.9rem;
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: var(--accent-blue);
-            transition: var(--transition);
-        }
-
-        .nav-menu a:hover::after {
-            width: 80%;
         }
 
         .nav-menu a:hover {
@@ -177,170 +140,30 @@
             transform: scale(1.1);
         }
 
-        /* Mobile menu toggle */
-        .menu-toggle {
-            display: none;
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 280px;
-            height: 100vh;
-            background: var(--darker-bg);
-            backdrop-filter: blur(20px);
-            z-index: 1001;
-            transition: var(--transition);
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
             padding: 2rem 1.5rem;
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .mobile-menu.active {
-            right: 0;
-        }
-
-        .mobile-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .mobile-menu-close {
-            background: none;
-            border: none;
-            color: var(--text-light);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 50%;
-            transition: var(--transition);
-        }
-
-        .mobile-menu-close:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-white);
-        }
-
-        .mobile-nav-menu {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .mobile-nav-menu li {
-            margin-bottom: 0.5rem;
-        }
-
-        .mobile-nav-menu a {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            color: var(--text-light);
-            text-decoration: none;
-            padding: 1rem;
-            border-radius: 8px;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-
-        .mobile-nav-menu a:hover {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-white);
-        }
-
-        .mobile-nav-menu .nav-icon {
-            font-size: 1.2rem;
-            width: 20px;
-            text-align: center;
-        }
-
-        /* Packages submenu */
-        .packages-submenu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 8px;
-            margin-top: 0.5rem;
-        }
-
-        .packages-submenu.active {
-            max-height: 200px;
-        }
-
-        .packages-submenu a {
-            padding: 0.8rem 1rem 0.8rem 3rem;
-            font-size: 0.9rem;
-            border-radius: 6px;
-            margin: 0.2rem 0;
-        }
-
-        .packages-submenu img {
-            width: 20px;
-            height: auto;
-            margin-left: 0.5rem;
-        }
-
-        .mobile-menu-footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1.5rem;
-        }
-
-        .mobile-contact-icons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .mobile-contact-icon {
-            color: var(--text-light);
-            font-size: 1rem;
-            padding: 0.8rem;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-        }
-
-        .mobile-contact-icon:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-white);
-        }
-
-        /* Menu Overlay */
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-
-        .menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+        .hero-section {
+            text-align: center;
+            padding: 4rem 0;
             background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 50%, var(--accent-bg) 100%);
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
+        .hero-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -353,1133 +176,420 @@
         }
 
         .hero-content {
-            text-align: center;
-            z-index: 20;
-            max-width: 700px;
-            padding: 1.5rem;
-        }
-
-        .hero-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            margin-bottom: 1.2rem;
             position: relative;
-        }
-
-        .hero-logo {
-            height: 60px;
-            transition: var(--transition);
-            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
-        }
-
-        .hero-logo:hover {
-            transform: scale(1.1) translateY(-5px);
-        }
-
-        .hero-logo.main {
-            height: 90px;
-            z-index: 3;
-            animation: gentleFloat 4s ease-in-out infinite;
-        }
-
-        @keyframes gentleFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
+            z-index: 2;
         }
 
         .hero-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 800;
-            margin-bottom: 0.9rem;
+            margin-bottom: 1rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            line-height: 1.2;
         }
 
         .hero-subtitle {
-            font-size: 1.0rem;
-            color: var(--text-dark);
-            margin-bottom: 1.0rem;
-            line-height: 1.5;
-        }
-
-        .hero-description {
-            font-size: 0.85rem;
+            font-size: 1.2rem;
             color: var(--text-light);
-            margin-bottom: 2.5rem;
-            max-width: 550px;
+            margin-bottom: 2rem;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .hero-cta {
-            display: flex;
-            gap: 1.2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.3rem 1.9rem;
-            border: none;
-            border-radius: var(--border-radius);
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary {
-            background: var(--gradient-netflix);
-            color: var(--text-white);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .btn-secondary {
-            background: var(--gradient-shahid);
-            color: var(--text-white);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .btn-secondary:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .btn-youtube {
-            background: var(--gradient-youtube);
-            color: var(--text-white);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .btn-youtube:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-heavy);
-        }
-
         /* Content Sections */
-        .section {
-            padding: 4rem 1.5rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
+        .content-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
         }
 
         .section-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        .section-subtitle {
-            font-size: 1rem;
-            color: var(--text-dark);
-        }
-
-        /* Packages Carousel Section */
-        .packages-section {
-            padding: 3rem 0;
-            background: rgba(255, 255, 255, 0.02);
-            overflow: hidden;
-        }
-
-        .packages-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .carousel-container {
-            position: relative;
-            overflow-x: scroll; /* Enable horizontal scrolling */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-            margin: 2.5rem 0;
-            cursor: grab;
-            user-select: none;
-            scrollbar-width: none; /* Hide scrollbar for Firefox */
-            scroll-behavior: smooth; /* Smooth scrolling for programmatic scroll */
-        }
-
-        .carousel-container::-webkit-scrollbar {
-            display: none; /* Hide scrollbar for Chrome, Safari, Opera */
-        }
-
-        .carousel-container:active {
-            cursor: grabbing;
-        }
-
-        .carousel-track {
             display: flex;
-            gap: 1.5rem;
-            width: max-content; /* Allow track to be wider than container */
-            /* No CSS transitions or animations here, handled by JS */
+            align-items: center;
+            gap: 1rem;
         }
 
-        .package-category {
-            margin-bottom: 3rem;
+        .section-icon {
+            font-size: 2rem;
+            color: var(--accent-blue);
         }
 
-        .category-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text-white);
-            text-align: center;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .category-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 2px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-
-        .package-card {
-            min-width: 220px;
-            height: 320px;
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: var(--shadow-heavy);
-            transition: var(--transition);
-            flex-shrink: 0;
-        }
-
-        .package-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .package-image {
-            width: 100%;
-            height: 70%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .package-card:hover .package-image {
-            transform: scale(1.1);
-        }
-
-        .package-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-            padding: 1.5rem 1.5rem 1.5rem;
-            color: white;
-        }
-
-        .package-title {
+        .section-content {
             font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            line-height: 1.8;
+            color: var(--text-light);
         }
 
-        .package-subtitle {
-            font-size: 0.8rem;
-            opacity: 0.8;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        .section-content p {
+            margin-bottom: 1.5rem;
         }
 
-        .package-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: var(--netflix-red);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.7rem;
-            font-weight: 700;
+        .highlight-box {
+            background: var(--gradient-shahid);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            color: var(--text-white);
             box-shadow: var(--shadow-medium);
         }
 
-        .package-badge.top {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-        }
-
-        /* Content Grid */
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .content-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .content-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-
-        .content-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .content-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-heavy);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .card-icon {
-            font-size: 2.0rem;
-            color: var(--accent-blue);
-            margin-bottom: 0.1rem;
-        }
-
-        .card-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
+        .highlight-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
             font-weight: 600;
-            margin-bottom: 0.4rem;
+        }
+
+        /* PDF Download Section */
+        .pdf-section {
+            background: var(--gradient-netflix);
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
             color: var(--text-white);
+            box-shadow: var(--shadow-heavy);
         }
 
-        .card-description {
-            color: var(--text-dark);
-            line-height: 1.5;
-            font-size: 0.7rem;
+        .pdf-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
-        /* Platform Selection */
-        .platforms {
+        .pdf-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .pdf-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--text-white);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .pdf-download-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .pdf-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            margin-top: 2.5rem;
+            gap: 2rem;
+            margin: 3rem 0;
         }
 
-        .platform-card {
+        .feature-card {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: var(--border-radius);
-            padding: 1.5rem 1.2rem;
+            border-radius: 12px;
+            padding: 2rem;
             text-align: center;
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
-            position: relative;
-            overflow: hidden;
         }
 
-        .platform-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%);
-            opacity: 0;
-            transition: var(--transition);
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
-        .platform-card:hover::before {
-            opacity: 1;
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
         }
 
-        .platform-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .platform-card.netflix:hover {
-            border-color: var(--netflix-red);
-            box-shadow: 0 15px 35px rgba(229, 9, 20, 0.3);
-        }
-
-        .platform-card.shahid:hover {
-            border-color: var(--shahid-green);
-            box-shadow: 0 15px 35px rgba(0, 180, 160, 0.3);
-        }
-
-        .platform-card.youtube:hover {
-            border-color: var(--youtube-red);
-            box-shadow: 0 15px 35px rgba(255, 0, 0, 0.3);
-        }
-
-        .platform-logo {
-            height: 60px;
-            margin-bottom: 1.rem;
-            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
-        }
-
-        .platform-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
             color: var(--text-white);
         }
 
-        .platform-description {
-            color: var(--text-dark);
-            margin-bottom: 1.1rem;
-            line-height: 1.5;
-            font-size: 0.7rem;
+        .feature-description {
+            color: var(--text-light);
+            line-height: 1.6;
         }
 
-        /* Original Footer Styles */
-        footer {
-            background-color: var(--darker-bg);
-            padding: 30px 15px 15px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        /* Footer */
+        .footer {
+            background: var(--darker-bg);
+            padding: 3rem 1.5rem 1.5rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .footer-title {
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--text-white);
             font-size: 1.1rem;
-            margin-bottom: 12px;
-            color: var(--light-text);
-            font-weight: 600;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
-        .footer-description {
-            max-width: 600px;
-            margin: 0 auto 25px;
-            line-height: 1.5;
-            opacity: 0.8;
-            font-size: 0.8rem;
-            color: var(--light-text);
-        }
-
-        .support-title {
-            font-size: 0.95rem;
-            margin: 25px 0 12px;
-            font-weight: 600;
-            color: var(--light-text);
-        }
-
-        .contact-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 15px 0 25px;
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--light-text);
-            opacity: 0.7;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            padding: 8px;
-            border-radius: 50%;
-        }
-
-        .contact-icon:hover {
-            opacity: 1;
-            transform: scale(1.1);
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px 20px;
-            margin-bottom: 25px;
-        }
-
-        .footer-link {
-            color: var(--light-text);
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-dark);
             text-decoration: none;
-            opacity: 0.7;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            font-size: 0.75rem;
+            line-height: 1.6;
+            font-size: 0.9rem;
         }
 
-        .footer-link:hover {
-            opacity: 1;
-            text-decoration: underline;
-            color: #e50914;
+        .footer-section a:hover {
+            color: var(--text-white);
         }
 
-        .payment-methods {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 25px 0;
-            flex-wrap: wrap;
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-dark);
+            font-size: 0.8rem;
         }
 
-        .payment-method {
-            height: 25px;
-            filter: brightness(0) invert(1) opacity(0.6);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .payment-method:hover {
-            opacity: 1;
-            transform: scale(1.05);
-        }
-
-        .copyright {
-            font-size: 0.7rem;
-            opacity: 0.6;
-            margin-top: 20px;
-            color: var(--light-text);
-        }
-
-        /* Responsive Design */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
-            }
-
-            .menu-toggle {
-                display: block;
             }
 
             .hero-title {
                 font-size: 2.2rem;
             }
 
-            .hero-logos {
-                gap: 1.2rem;
+            .section-title {
+                font-size: 1.6rem;
             }
 
-            .hero-logo {
-                height: 25px;
+            .content-section {
+                padding: 1.5rem;
             }
 
-            .hero-logo.main {
-                height: 90px;
+            .pdf-section {
+                padding: 2rem;
             }
 
-            .hero-cta {
-                flex-direction: column;
-                align-items: center;
+            .pdf-title {
+                font-size: 1.8rem;
             }
 
-            .platforms {
+            .features-grid {
                 grid-template-columns: 1fr;
             }
-
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section {
-                padding: 3rem 1rem;
-            }
-
-            .header {
-                padding: 0.6rem 1rem;
-            }
-
-            .contact-icons {
-                gap: 15px;
-            }
-
-            .footer-links {
-                gap: 8px 12px;
-            }
-
-            .package-card {
-                min-width: 200px;
-                height: 280px;
-            }
-
-            .carousel-track {
-                gap: 1rem;
-            }
-
-            .mobile-menu {
-                width: 100%;
-                right: -100%;
-            }
-        }
-
-        /* Scroll animations */
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(25px);
-            transition: all 0.8s ease-out;
-        }
-
-        .scroll-animate.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-<!-- Menu Overlay -->
-<div class="menu-overlay" id="menuOverlay"></div>
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-<div class="mobile-menu-header">
-<img alt="One Mix" src="https://i.postimg.cc/J4LG7CRs/eeb53616-5789-45e7-a1aa-9de8a6207f08.png" style="height: 35px;"/>
-<button class="mobile-menu-close" id="mobileMenuClose">
-<i class="fas fa-times"></i>
-</button>
-</div>
-<ul class="mobile-nav-menu">
-<li><a href="#login"><i class="fas fa-sign-in-alt nav-icon"></i>تسجيل الدخول</a></li>
-<ul class="mobile-nav-menu">
-<li><a href="https://one-mix-com.netlify.app/"><i class="fas fa-home nav-icon"></i>الرئيسية</a></li>
-<li>
-<a href="#packages" id="packagesToggle"><i class="fas fa-box nav-icon"></i>الباقات <i class="fas fa-chevron-down" style="margin-right: auto;"></i></a>
-<div class="packages-submenu" id="packagesSubmenu">
-<a href="https://one-mix-netflx-bouquets.netlify.app/"><img alt="Netflix" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" style="height: 15px;"/>نتفلكس</a>
-<a href="https://onemix-shahid-bouquets.netlify.app/"><img alt="Shahid" src="https://shahid.mbc.net/mediaObject/shahidlogo/light/Shahid_logo_light/original/Shahid_logo_light.png?height=72&amp;width=auto&amp;croppingPoint=mc&amp;type=webp" style="height: 15px;"/>شاهد</a>
-<a href="https://onemix-shahid-bouquets.netlify.app/"><img alt="YouTube" src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" style="height: 15px;"/>يوتيوب</a>
-</div>
-</li>
-<li><a href="https://onemix-who-we-are.netlify.app/"><i class="fas fa-info-circle nav-icon"></i>من نحن</a></li>
-<li><a href="mailto:ameenalmosed2@gmail.com"><i class="fas fa-headset nav-icon"></i>فريق الدعم</a></li>
-</ul>
-<div class="mobile-menu-footer">
-<div class="mobile-contact-icons">
-<a class="mobile-contact-icon" href="https://wa.me/+966561824251"><i class="fas fa-phone-alt"></i></a>
-<a class="mobile-contact-icon" href="https://wa.me/+966561824251"><i class="fab fa-whatsapp"></i></a>
-<a class="mobile-contact-icon" href="mailto:ameenalmosed2@gmail.com"><i class="fas fa-envelope"></i></a>
-</div>
-</div>
-</div>
-<!-- Header -->
-<header class="header" id="header">
-<div class="header-content">
-<img alt="One Mix" class="logo" src="https://i.postimg.cc/J4LG7CRs/eeb53616-5789-45e7-a1aa-9de8a6207f08.png"/>
-<nav>
-<ul class="nav-menu">
-<li><a href="#home">الرئيسية</a></li>
-<li><a href="#packages">الباقات</a></li>
-<li><a href="#services">الخدمات</a></li>
-<li><a href="#platforms">المنصات</a></li>
-<li><a href="#contact">اتصل بنا</a></li>
-</ul>
-</nav>
-<div class="header-actions">
-<button class="btn-icon" id="searchBtn">
-<i class="fas fa-search"></i>
-</button>
-<button class="btn-icon menu-toggle" id="menuToggle">
-<i class="fas fa-bars"></i>
-</button>
-</div>
-</div>
-</header>
-<!-- Hero Section -->
-<section class="hero" id="home">
-<div class="hero-content">
-<div class="hero-logos">
-<img alt="Netflix" class="hero-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"/>
-<img alt="One Mix" class="hero-logo main" src="https://i.postimg.cc/J4LG7CRs/eeb53616-5789-45e7-a1aa-9de8a6207f08.png"/>
-<img alt="Shahid" class="hero-logo" src="https://shahid.mbc.net/mediaObject/shahidlogo/light/Shahid_logo_light/original/Shahid_logo_light.png?height=72&amp;width=auto&amp;croppingPoint=mc&amp;type=webp"/>
-</div>
-<h1 class="hero-title">One Mix</h1>
-<p class="hero-subtitle">وجهتك الذكية لاختيار اشتراكك الترفيهي المفضل</p>
-<p class="hero-description">
-                مرحبًا بك في عالم One Mix، حيث نمنحك حرية الاختيار بين أقوى منصتين للمحتوى الترفيهي: 
-                Shahid و Netflix، في مكان واحد، وكذالك اشتراكات يوتيوب بريميوم ، بخطوات سهلة وسريعة.
-            </p>
-<div class="hero-cta">
-<a class="btn btn-primary" href="#platforms">
-<i class="fas fa-play"></i>
-                    ابدأ الآن
-                </a>
-<a class="btn btn-secondary" href="#packages">
-<i class="fas fa-info-circle"></i>
-                    اعرف المزيد
-                </a>
-</div>
-</div>
-</section>
-<!-- Packages Section -->
-<section class="packages-section" id="packages">
-<div class="packages-container">
-<div class="section-header scroll-animate">
-<h2 class="section-title">محتوى الباقات المميزة</h2>
-<p class="section-subtitle">اكتشف أفضل العروض والباقات الحصرية</p>
-</div>
-<!-- New Releases Category -->
-<div class="package-category scroll-animate">
-<h3 class="category-title"> باقات netflix</h3>
-<div class="carousel-container">
-<div class="carousel-track">
-<div class="package-card">
-<div class="package-badge top">TOP 10</div>
-<img alt=" اشتراك شهر نتفلكس" class="package-image" src="https://i.postimg.cc/MpkSqjN7/20250701-013443.jpg"/>
-<div class="package-info">
-<h4 class="package-title">باقة شهر واحد</h4>
-<p class="package-subtitle"> 9﷼ </p>
-</div>
-</div>
-<div class="package-card">
-<div class="package-badge top">TOP 10</div>
-<img alt=" اشتراك ٣ شهور نتفلكس" class="package-image" src="https://i.postimg.cc/k5s3QY4s/20250701-013508.jpg"/>
-<div class="package-info">
-<h4 class="package-title">باقة ثلاث شهور</h4>
-<p class="package-subtitle">19 ﷼  </p>
-</div>
-</div>
-<div class="package-card">
-<div class="package-badge top">TOP 10</div>
-<img alt="أشتراك ٩ شهور نتفلكس  " class="package-image" src="https://i.postimg.cc/NFy3wgxC/20250701-013600.jpg"/>
-<div class="package-info">
-<h4 class="package-title">باقة 9 شهور </h4>
-<p class="package-subtitle">49﷼  </p>
-</div>
-</div>
-<div class="package-card">
-<img alt=" أشتراك سنة كاملة" class="package-image" src="https://i.postimg.cc/VkP33P04/20250701-013643.jpg"/>
-<div class="package-info">
-<h4 class="package-title">باقة سنة  كاملة  </h4>
-<p class="package-subtitle">65﷼ </p>
-</div>
-</div>
-<div class="package-card">
-<img alt=" تصفح المزيد" class="package-image" src="https://i.postimg.cc/3JMFBdHK/images-3.png"/>
-<div class="package-info">
-<h4 class="package-title">جميع العروض</h4>
-<p class="package-subtitle">الانتقال الى منصة netflix </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Drama Category -->
-<div class="package-category scroll-animate">
-<h3 class="category-title">باقات شاهد   </h3>
-<div class="carousel-container">
-<div class="carousel-track">
-<div class="package-card">
-<img alt=" شهر واحد" class="package-image" src="https://i.postimg.cc/5yFRRsxZ/20250701-014016.png"/>
-<div class="package-info">
-<h4 class="package-title">باقة
-شهر واحد</h4>
-<p class="package-subtitle">7﷼</p>
-</div>
-</div>
-<div class="package-card">
-<img alt="اشتراك ٣ شهور" class="package-image" src="https://i.postimg.cc/FFMrsqJk/20250701-014044.png"/>
-<div class="package-info">
-<h4 class="package-title">باقة ثلاث شهور</h4>
-<p class="package-subtitle">19﷼  </p>
-</div>
-</div>
-<div class="package-card">
-<img alt=" اشتراك سنة كاملة" class="package-image" src="https://i.postimg.cc/QxcXBbp4/20250701-014111.png"/>
-<div class="package-info">
-<h4 class="package-title">باقة سنة كاملة</h4>
-<p class="package-subtitle">69﷼  </p>
-</div>
-</div>
-<div class="package-card">
-<img alt="اشتراك رياضة" class="package-image" src="https://i.postimg.cc/0QPLbP8v/20250703-001049.jpg"/>
-<div class="package-info">
-<h4 class="package-title">باقة VIP | رياضة شهرية </h4>
-<p class="package-subtitle"> 8﷼ </p>
-</div>
-</div>
-<div class="package-card">
-<img alt="اشتراك شامل " class="package-image" src="https://i.postimg.cc/qvKYwzq0/20250703-001218.jpg"/>
-<div class="package-info">
-<h4 class="package-title">باقة اشتراك شامل </h4>
-<p class="package-subtitle">12﷼ </p>
-</div>
-</div>
-<div class="package-card">
-<img alt=" vip bigtime" class="package-image" src="https://i.postimg.cc/Pqh6My0z/20250703-001340.jpg"/>
-<div class="package-info">
-<h4 class="package-title"> باقة vip|bigtime شهربة</h4>
-<p class="package-subtitle">15﷼ </p>
-</div>
-</div>
-<div class="package-card">
-<img alt="جميع العروض " class="package-image" src="https://shahid.mbc.net/mediaObject/17ec04e9-5559-4465-ab5a-82f900ae8325?height=1244&width=840&croppingPoint=tc&version=1&type=avif"/>
-<div class="package-info">
-<h4 class="package-title">جميع العروض </h4>
-<p class="package-subtitle">الأنتقال الى منصة شاهد </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Weekly Picks Category -->
-<div class="package-category scroll-animate">
-<h3 class="category-title"> باقات يوتيوب  </h3>
-<div class="carousel-container">
-<div class="carousel-track">
-<div class="package-card">
-<img alt="اشتراك شهر " class="package-image" src="https://i.postimg.cc/rwcq5rj8/20250701-031349.png"/>
-<div class="package-info">
-<h4 class="package-title">  شهر واحد </h4>
-<p class="package-subtitle">9﷼ </p>
-</div>
-</div>
-<div class="package-card">
-<img alt="اشتراك ٣ شهور" class="package-image" src="https://i.postimg.cc/xd1Y4VBh/20250701-031505.png"/>
-<div class="package-info">
-<h4 class="package-title">ثلاث شهور</h4>
-<p class="package-subtitle">23﷼ </p>
-</div>
-</div>
-<div class="package-card">
-<img alt="  اشتراك سنة" class="package-image" src="https://i.postimg.cc/fbqZ4gNL/20250701-031527.png"/>
-<div class="package-info">
-<h4 class="package-title">  سنة كاملة</h4>
-<p class="package-subtitle">69﷼ </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- New Category 1: افضل محتوى Netflix   -->
-<div class="package-category scroll-animate">
-<h3 class="category-title">الأكثر مشاهدة | netflix   </h3>
-<div class="carousel-container">
-<div class="carousel-track">
-<div class="package-card">
-<img alt="INTERSTELLAR" class="package-image" src="https://assabah.ma/wp-content/uploads/2025/02/netf-2.jpg"/>
-<div class="package-info">
-<h4 class="package-title">لعبة الحبار</h4>
-<p class="package-subtitle"> الجزء الثالث </p>
-</div>
-</div>
-<div class="package-card">
-<img alt="BLADE RUNNER 2049" class="package-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6q0g4iiiyewpLdhLNGjMj43IzlqWPDEzC8lj_5bMov9VLi1Ft9E2EXdk_&s=10"/>
-<div class="package-info">
-<h4 class="package-title">  شباب البومب</h4>
-<p class="package-subtitle">الجزء 12</p>
-</div>
-</div>
-<div class="package-card">
-<img alt="THE MATRIX" class="package-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQemgJO0xuBvKFtu4sUT0iTBzgh_xREAQGYdgz3VFcUEqfeKTZ_Hg&s=10&ec=73016261"/>
-<div class="package-info">
-<h4 class="package-title"> البرفيسور  </h4>
-<p class="package-subtitle"> </p>
-</div>
-</div>
-<div class="package-card">
-<img alt="DUNE" class="package-image" src="https://images.justwatch.com/poster/331254342/s332/"/>
-<div class="package-info">
-<h4 class="package-title">DEPT.Q</h4>
-<p class="package-subtitle"> </p>
-</div>
-</div>
-<div class="package-card">
-<img alt="ARRIVAL" class="package-image" src="https://upload.wikimedia.org/wikipedia/ar/e/e6/The_Witcher_%28TV_series%29.jpg"/>
-<div class="package-info">
-<h4 class="package-title">THE WATHER</h4>
-<p class="package-subtitle">  </p>
-</div>
-</div>
-<div class="package-card">
-<img alt="INCEPTION" class="package-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQArJmIoeqqMcYslB6Iko9kyXLG6T11juWYmohXy7slLzxcLvFzRhk5DkQ&s=10"/>
-<div class="package-info">
-<h4 class="package-title">رصاصة غادرة</h4>
-<p class="package-subtitle"> </p>
-</div>
-</div>
-<div class="package-card">
-<img alt="ETERNAL SUNSHINE" class="package-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjC9fEI0b82iAlZVokdq0Yz1egDqqWyOBP3P3rquJernIbVACpEwBp9Kc&s=10"/>
-<div class="package-info">
-<h4 class="package-title"> الموت</h4>
-<p class="package-subtitle"> </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- New Category 2: الأكثر مشاهدة شاهد -->
-<div class="package-category scroll-animate">
-<h3 class="category-title">  الأكثر مشاهدة | شاهد</h3>
-<div class="carousel-container">
-<div class="carousel-track">
-<div class="package-card">
-<img alt="BREAKING BAD" class="package-image" src="https://shahid.mbc.net/mediaObject/55562946-6c48-495c-bda1-28be1de09ab4?width=341.25&version=1&type=avif&q=80"/>
-<div class="package-info">
-<h4 class="package-title"> فهد البطل</h4>
-<p class="package-subtitle">أثارة</p>
-</div>
-</div>
-<div class="package-card">
-<img alt="SHERLOCK" class="package-image" src="https://shahid.mbc.net/mediaObject/e5cb726f-5093-49ad-afa3-c751a0aa3824?width=341.25&version=1&type=avif&q=80"/>
-<div class="package-info">
-<h4 class="package-title">عائشين معانا</h4>
-<p class="package-subtitle">قريبا </p>
-</div>
-</div>
-<div class="package-card">
-<img alt="MINDHUNTER" class="package-image" src="https://shahid.mbc.net/mediaObject/5a446938-fedd-41ca-9f74-803495f6e77e?width=341.25&version=1&type=avif&q=80"/>
-<div class="package-info">
-<h4 class="package-title">فندق الأحلام</h4>
-<p class="package-subtitle">  </p>
-</div>
-</div>
-<div class="package-card">
-<img alt="TRUE DETECTIVE" class="package-image" src="https://shahid.mbc.net/mediaObject/2024/Bedour/Bedour3/Poster_Leyla_AR/original/Poster_Leyla_AR.jpg?width=341.25&version=1&type=avif&q=80"/>
-<div class="package-info">
-<h4 class="package-title">ليلى </h4>
-<p class="package-subtitle"> حب</p>
-</div>
-</div>
-<div class="package-card">
-<img alt="NARCOS" class="package-image" src="https://shahid.mbc.net/mediaObject/a40fa407-af02-4cf7-a148-ee02e04fde3a?width=341.25&version=1&type=avif&q=80"/>
-<div class="package-info">
-<h4 class="package-title">أشغال شقة جدا</h4>
-<p class="package-subtitle"> </p>
-</div>
-</div>
-<div class="package-card">
-<img alt="PEAKY BLINDERS" class="package-image" src="https://shahid.mbc.net/mediaObject/Curation_2023/Redesign/MAY/Tash-Poster/Poster_Tash_S1/original/Poster_Tash_S1.jpg?width=341.25&version=1&type=avif&q=80"/>
-<div class="package-info">
-<h4 class="package-title"> طاش</h4>
-<p class="package-subtitle"> الموسم الاول</p>
-</div>
-</div>
-<div class="package-card">
-<img alt="DEXTER" class="package-image" src="https://shahid.mbc.net/mediaObject/slider/Agami-Sliderss/thumbs/untitled/Haroun-Al-Rashid-Poster/original/Haroun-Al-Rashid-Poster.jpg?width=341.25&version=1&type=avif&q=80"/>
-<div class="package-info">
-<h4 class="package-title">هارون الرشيد</h4>
-<p class="package-subtitle">  مسلسلات تاريخية</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Services Section -->
-<section class="section" id="platforms">
-<div class="section-header scroll-animate">
-<h2 class="section-title">اختر منصتك المفضلة</h2>
-<p class="section-subtitle">استمتع بأفضل المحتوى الترفيهي</p>
-</div>
-<div class="platforms">
-<div class="platform-card netflix scroll-animate">
-<img alt="Netflix" class="platform-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"/>
-<h3 class="platform-title">نتفلكس</h3>
-<p class="platform-description">
-                    استمتع بآلاف الأفلام والمسلسلات العالمية الحصرية مع جودة عالية وبدون إعلانات
-                </p>
-<a class="btn btn-primary" href="https://one-mix-netflx-bouquets.netlify.app/">
-<i class="fas fa-play"></i>
-                    اشترك الآن
-                </a>
-</div>
-<div class="platform-card shahid scroll-animate">
-<img alt="Shahid" class="platform-logo" src="https://shahid.mbc.net/mediaObject/shahidlogo/light/Shahid_logo_light/original/Shahid_logo_light.png?height=72&amp;width=auto&amp;croppingPoint=mc&amp;type=webp"/>
-<h3 class="platform-title">شاهد</h3>
-<p class="platform-description">
-                    تابع أحدث المسلسلات العربية والتركية والأفلام الحصرية مع أفضل جودة مشاهدة
-                </p>
-<a class="btn btn-secondary" href="https://onemix-shahid-bouquets.netlify.app/">
-<i class="fas fa-play"></i>
-                    اشترك الآن
-                </a>
-</div>
-<div class="platform-card youtube scroll-animate">
-<img alt="YouTube" class="platform-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"/>
-<h3 class="platform-title">يوتيوب</h3>
-<p class="platform-description">
-                    استمتع بمحتوى يوتيوب بريميوم بدون إعلانات مع إمكانية التحميل والاستماع في الخلفية
-                </p>
-<a class="btn btn-youtube" href="https://onemix-shahid-bouquets.netlify.app/">
-<i class="fas fa-play"></i>
-                    اشترك الآن
-                </a>
-</div>
-</div>
-</section>
-<!-- Platforms Section -->
-<section class="section" id="services">
-<div class="section-header scroll-animate">
-<h2 class="section-title">لماذا One Mix؟</h2>
-<p class="section-subtitle">نوفر لك تجربة اشتراك سلسة وآمنة</p>
-</div>
-<div class="content-grid">
-<div class="content-card scroll-animate">
-<div class="card-icon">
-<i class="fas fa-bolt"></i>
-</div>
-<h3 class="card-title">سرعة وسهولة</h3>
-<p class="card-description">
-                    اشترك في منصتك المفضلة بخطوات بسيطة وسريعة، دون تعقيدات أو إجراءات مطولة.
-                </p>
-</div>
-<div class="content-card scroll-animate">
-<div class="card-icon">
-<i class="fas fa-shield-alt"></i>
-</div>
-<h3 class="card-title">أمان وموثوقية</h3>
-<p class="card-description">
-                    نضمن لك تجربة آمنة ومحمية بأعلى معايير الأمان لحماية بياناتك الشخصية.
-                </p>
-</div>
-<div class="content-card scroll-animate">
-<div class="card-icon">
-<i class="fas fa-headset"></i>
-</div>
-<h3 class="card-title">دعم متواصل</h3>
-<p class="card-description">
-                    فريق دعم متخصص متاح على مدار الساعة لمساعدتك في أي استفسار أو مشكلة.
-                </p>
-</div>
-</div>
-</section>
-<!-- Original Footer -->
-<footer id="contact">
-<h2 class="footer-title">اسأل عنا !</h2>
-<p class="footer-description">
-            One Mix هو موقع إلكتروني يوفّر لك تجربة سلسة وآمنة للاشتراك في أشهر منصات الترفيه: شاهد ونتفليكس.
-            نحن نسهّل عليك الوصول إلى المحتوى الذي تحب، بخطوات بسيطة ودعم موثوق.
-        </p>
-<h3 class="support-title">دائمًا جاهزين لمساعدتك</h3>
-<div class="contact-icons">
-<a class="contact-icon" href="mailto:ameenalmosed2@gmail.com"><i class="fas fa-envelope"></i></a>
-<a class="contact-icon" href="https://wa.me/+966561824251"><i class="fab fa-whatsapp"></i></a>
-<a class="contact-icon" href="https://wa.me/+966561824251"><i class="fas fa-phone-alt"></i></a>
-</div>
-<div class="footer-links">
-<a class="footer-link" href="https://onemix-documentation.netlify.app/">توثيق التجارة الإلكترونية</a>
-<a class="footer-link" href="https://onemix-who-we-are.netlify.app/">الاسئلة الشائعة</a>
-<a class="footer-link" href="https://onemix-who-we-are.netlify.app/">من نحن</a>
-<a class="footer-link" href="#">الشروط والأحكام</a>
-<a class="footer-link" href="mailto:ameenalmosed2@gmail.com">الشكاوي والبلاغات</a>
-</div>
-<div class="payment-methods">
-<img alt="Visa" class="payment-method" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"/>
-<img alt="Mastercard" class="payment-method" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"/>
-<img alt="Mada" class="payment-method" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Mada_Logo.svg/640px-Mada_Logo.svg.png"/>
-<img alt="STC Pay" class="payment-method" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Stc_pay.svg/1280px-Stc_pay.svg.png"/>
-</div>
-<p class="copyright">كل الحقوق محفوظة لدى ONE MIX - <span id="year">2025</span> ©</p>
-</footer>
-<script>
-        // Set current year
-        document.getElementById('year').textContent = new Date().getFullYear();
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <img alt="One Mix" class="logo" src="https://i.postimg.cc/J4LG7CRs/eeb53616-5789-45e7-a1aa-9de8a6207f08.png"/>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="#documentation">التوثيق</a></li>
+                    <li><a href="#features">المميزات</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-icon" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
 
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">توثيق التجارة الإلكترونية</h1>
+                    <p class="hero-subtitle">
+                        منصة One Mix معتمدة ومُوثقة رسمياً من وزارة الموارد البشرية والتنمية الاجتماعية في المملكة العربية السعودية
+                    </p>
+                </div>
+            </section>
+
+            <!-- About Documentation Section -->
+            <section class="content-section" id="documentation">
+                <h2 class="section-title">
+                    <i class="fas fa-certificate section-icon"></i>
+                    حول توثيق منصة One Mix
+                </h2>
+                <div class="section-content">
+                    <p>
+                        تفخر منصة One Mix بحصولها على التوثيق الرسمي من وزارة الموارد البشرية والتنمية الاجتماعية في المملكة العربية السعودية. هذا التوثيق يؤكد التزامنا بأعلى معايير الجودة والأمان في تقديم خدمات التجارة الإلكترونية.
+                    </p>
+                    <p>
+                        يضمن هذا التوثيق للعملاء والشركاء أن منصة One Mix تعمل وفقاً للقوانين واللوائح السعودية، وتلتزم بحماية بيانات المستخدمين وضمان سلامة المعاملات المالية.
+                    </p>
+                    
+                    <div class="highlight-box">
+                        <h3><i class="fas fa-shield-alt"></i> ضمانات التوثيق</h3>
+                        <p>
+                            التوثيق الرسمي يضمن أن منصة One Mix تلتزم بجميع المعايير الحكومية للتجارة الإلكترونية، بما في ذلك حماية البيانات، أمان المعاملات، وحقوق المستهلك.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="content-section" id="features">
+                <h2 class="section-title">
+                    <i class="fas fa-star section-icon"></i>
+                    مميزات التوثيق الرسمي
+                </h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-lock feature-icon"></i>
+                        <h3 class="feature-title">أمان البيانات</h3>
+                        <p class="feature-description">
+                            حماية كاملة لبيانات المستخدمين وفقاً لأعلى المعايير الأمنية المعتمدة من الحكومة السعودية
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-credit-card feature-icon"></i>
+                        <h3 class="feature-title">أمان المعاملات</h3>
+                        <p class="feature-description">
+                            جميع المعاملات المالية محمية بأحدث تقنيات التشفير والحماية المصرفية
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-gavel feature-icon"></i>
+                        <h3 class="feature-title">الامتثال القانوني</h3>
+                        <p class="feature-description">
+                            التزام كامل بجميع القوانين واللوائح السعودية للتجارة الإلكترونية
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-headset feature-icon"></i>
+                        <h3 class="feature-title">دعم العملاء</h3>
+                        <p class="feature-description">
+                            خدمة عملاء متاحة على مدار الساعة لضمان أفضل تجربة للمستخدمين
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PDF Download Section -->
+            <section class="pdf-section">
+                <h2 class="pdf-title">
+                    <i class="fas fa-file-pdf"></i>
+                    وثيقة التوثيق الرسمية
+                </h2>
+                <p class="pdf-description">
+                    احصل على نسخة من وثيقة التوثيق الرسمية لمنصة One Mix من وزارة الموارد البشرية والتنمية الاجتماعية
+                </p>
+                <a href="توثيقالتجارةالإلكترونية.pdf" target="_blank" class="pdf-download-btn">
+                    <i class="fas fa-download pdf-icon"></i>
+                    تحميل وثيقة التوثيق (PDF)
+                </a>
+            </section>
+
+            <!-- Additional Information -->
+            <section class="content-section">
+                <h2 class="section-title">
+                    <i class="fas fa-info-circle section-icon"></i>
+                    معلومات إضافية
+                </h2>
+                <div class="section-content">
+                    <p>
+                        تم الحصول على هذا التوثيق بعد مراجعة شاملة لجميع جوانب منصة One Mix، بما في ذلك البنية التقنية، إجراءات الأمان، سياسات الخصوصية، وآليات حماية المستهلك.
+                    </p>
+                    <p>
+                        يتم تجديد هذا التوثيق بشكل دوري لضمان استمرار الامتثال لأحدث المعايير والقوانين في مجال التجارة الإلكترونية.
+                    </p>
+                    <p>
+                        للاستفسارات حول التوثيق أو للحصول على معلومات إضافية، يرجى التواصل مع فريق الدعم الفني لدينا.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>One Mix</h3>
+                <p>منصة موثقة رسمياً للتجارة الإلكترونية</p>
+                <p>معتمدة من وزارة الموارد البشرية والتنمية الاجتماعية</p>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <p><a href="index.html">الرئيسية</a></p>
+                <p><a href="#documentation">التوثيق</a></p>
+                <p><a href="#features">المميزات</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>تواصل معنا</h3>
+                <p>البريد الإلكتروني: info@onemix.com</p>
+                <p>الهاتف: +966 123 456 789</p>
+                <p>العنوان: الرياض، المملكة العربية السعودية</p>
+            </div>
+            <div class="footer-section">
+                <h3>التوثيق الرسمي</h3>
+                <p>رقم التوثيق: DOC-2024-001</p>
+                <p>تاريخ الإصدار: يناير 2024</p>
+                <p>صالح حتى: يناير 2025</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 One Mix. جميع الحقوق محفوظة. منصة موثقة رسمياً من وزارة الموارد البشرية والتنمية الاجتماعية.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Search button functionality
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            console.log('Search clicked');
         });
 
-        // Mobile menu functionality
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuClose = document.getElementById('mobileMenuClose');
-        const menuOverlay = document.getElementById('menuOverlay');
-
-        function openMenu() {
-            mobileMenu.classList.add('active');
-            menuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeMenu() {
-            mobileMenu.classList.remove('active');
-            menuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        menuToggle.addEventListener('click', openMenu);
-        mobileMenuClose.addEventListener('click', closeMenu);
-        menuOverlay.addEventListener('click', closeMenu);
-
-        // Packages submenu toggle
-        const packagesToggle = document.getElementById('packagesToggle');
-        const packagesSubmenu = document.getElementById('packagesSubmenu');
-
-        packagesToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            packagesSubmenu.classList.toggle('active');
-            const chevron = packagesToggle.querySelector('.fa-chevron-down');
-            chevron.style.transform = packagesSubmenu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
-        });
-
-        // Close menu when clicking on navigation links
-        document.querySelectorAll('.mobile-nav-menu a:not(#packagesToggle)').forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        // Prevent menu from closing when clicking inside it
-        mobileMenu.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-
-        // Close menu on escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-                closeMenu();
-            }
-        });
-
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1493,124 +603,16 @@
             });
         });
 
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-animate').forEach(el => {
-            observer.observe(el);
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
-
-        // Search button (placeholder for future implementation)
-        document.getElementById('searchBtn').addEventListener('click', () => {
-            console.log('Search clicked');
-        });
-
-        // Auto-scrolling and manual drag carousel functionality
-        function initCarousel() {
-            const carouselContainers = document.querySelectorAll('.carousel-container');
-
-            carouselContainers.forEach(carousel => {
-                let scrollInterval;
-                let isDragging = false;
-                let startX;
-                let scrollLeft;
-                const scrollSpeed = 1; // Adjust scroll speed as needed (pixels per interval)
-                const intervalTime = 20; // Milliseconds between scroll updates
-
-                // Function to start auto-scrolling
-                function startAutoScroll() {
-                    stopAutoScroll(); // Ensure no duplicate intervals
-                    scrollInterval = setInterval(() => {
-                        // Scroll to the right
-                        carousel.scrollLeft += scrollSpeed;
-
-                        // If reached the end, reset to beginning for a loop effect
-                        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
-                            carousel.scrollLeft = 0;
-                        }
-                    }, intervalTime);
-                }
-
-                // Function to stop auto-scrolling
-                function stopAutoScroll() {
-                    clearInterval(scrollInterval);
-                }
-
-                // Mouse events for dragging
-                carousel.addEventListener('mousedown', (e) => {
-                    isDragging = true;
-                    stopAutoScroll(); // Stop auto-scroll when dragging starts
-                    carousel.classList.add('dragging');
-                    startX = e.pageX - carousel.offsetLeft;
-                    scrollLeft = carousel.scrollLeft;
-                });
-
-                carousel.addEventListener('mouseleave', () => {
-                    if (isDragging) { // Only restart if dragging was active
-                        isDragging = false;
-                        carousel.classList.remove('dragging');
-                        // Resume auto-scroll after a short delay
-                        setTimeout(startAutoScroll, 3000); 
-                    }
-                });
-
-                carousel.addEventListener('mouseup', () => {
-                    isDragging = false;
-                    carousel.classList.remove('dragging');
-                    // Resume auto-scroll after a short delay
-                    setTimeout(startAutoScroll, 3000);
-                });
-
-                carousel.addEventListener('mousemove', (e) => {
-                    if (!isDragging) return;
-                    e.preventDefault(); // Prevent text selection etc.
-                    const x = e.pageX - carousel.offsetLeft;
-                    const walk = (x - startX) * 1; // Adjust sensitivity
-                    carousel.scrollLeft = scrollLeft - walk;
-                });
-
-                // Touch events for mobile dragging
-                carousel.addEventListener('touchstart', (e) => {
-                    isDragging = true;
-                    stopAutoScroll(); // Stop auto-scroll when dragging starts
-                    carousel.classList.add('dragging');
-                    startX = e.touches[0].pageX - carousel.offsetLeft;
-                    scrollLeft = carousel.scrollLeft;
-                }, { passive: true }); // Use passive: true for better scrolling performance
-
-                carousel.addEventListener('touchend', () => {
-                    isDragging = false;
-                    carousel.classList.remove('dragging');
-                    // Resume auto-scroll after a short delay
-                    setTimeout(startAutoScroll, 3000);
-                });
-
-                carousel.addEventListener('touchmove', (e) => {
-                    if (!isDragging) return;
-                    // e.preventDefault(); // Can prevent native scrolling if active
-                    const x = e.touches[0].pageX - carousel.offsetLeft;
-                    const walk = (x - startX) * 1; // Adjust sensitivity
-                    carousel.scrollLeft = scrollLeft - walk;
-                }, { passive: true }); // Use passive: true for better scrolling performance
-
-                // Start auto-scroll initially
-                startAutoScroll();
-            });
-        }
-        
-        // Initialize carousel when DOM is loaded
-        document.addEventListener('DOMContentLoaded', initCarousel);
     </script>
 </body>
 </html>
+
